@@ -1,9 +1,9 @@
 name: eShopOnWeb Build and Test
 
-#Triggers (uncomment line below to use it)
+# Triggers (uncomment line below to use it)
 on: [push, workflow_dispatch]
 
-#Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
+# Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
   RESOURCE-GROUP: rg-az400-eshopeonweb-201019770810
   LOCATION: francecentral
@@ -13,7 +13,7 @@ env:
 
 
 jobs:
-  #Build, test and publish .net web project in repository
+  # Build, test and publish .net web project in repository
   buildandtest:
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +25,7 @@ jobs:
       with:
         dotnet-version: '6.0.x'
         include-prerelease: true
-    #Build/Test/Publish the .net project
+    # Build/Test/Publish the .net project
     - name: Build with dotnet
       run: dotnet build ./eShopOnWeb.sln --configuration Release
     - name: Test with dotnet
